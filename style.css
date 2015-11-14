@@ -1,7 +1,23 @@
 body {
-    padding: 120px;
+    /* Must change when we put in logo */
+    padding-top: 111px;
 }
 
 .navbar-fixed-top{
     background-color: white;
+}
+
+/* Makes the element take up the entire height of the screen */
+.full-height{
+    /* Must change when we put in logo */
+    height: -o-calc(100vh - 111px); /* opera */
+    height: -webkit-calc(100vh - 111px); /* google, safari */
+    height: -moz-calc(100vh - 111px); /* firefox */
+}
+
+#id1 {
+    background-color: red;
+}
+#id2 {
+    background-color: blue;
 }
