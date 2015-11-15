@@ -8,9 +8,9 @@ $(document).ready(function() {
         event.preventDefault();
         
         if (!animating) {
-            animating = true;
             // If user scrolls down and is not at the bottom already
             if ((event.deltaY < 0) && $(".current").next(".full-height").length > 0) {
+                animating = true;
                 $(".current").next(".full-height").addClass("current");
                 $(".current").first().removeClass("current");
 
@@ -23,7 +23,8 @@ $(document).ready(function() {
                 $(".checked").next("li").addClass("checked");
                 $(".checked").first().removeClass("checked");
             // If user scrolls up and is not at the top already
-            } else if ((event.deltaY > 0) && $(".current").prev(".full-height").length > 0) { 
+            } else if ((event.deltaY > 0) && $(".current").prev(".full-height").length > 0) {
+                animating = true;
                 if ($(".current").prev(".full-height").length > 0) { 
                     $(".current").prev(".full-height").addClass("current");
                     $(".current").last().removeClass("current");
