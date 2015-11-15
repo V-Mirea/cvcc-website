@@ -4,6 +4,7 @@ $(document).ready(function() {
     $(window).bind('mousewheel', function(event) {
         var scrollTop = $(this).scrollTop();
         
+        event.preventDefault();
         // If user scrolls down
         if ((event.deltaY < 0) && $(".current").next(".full-height").length > 0) {
             $(".current").next(".full-height").addClass("current");
