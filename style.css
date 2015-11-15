@@ -1,6 +1,7 @@
 body {
     /* Must change when we put in logo */
     padding-top: 111px;
+    overflow: hidden;
 }
 
 .navbar-fixed-top{
@@ -32,3 +33,23 @@ body {
 #id5 {
     background-color: purple;
 }
+
+#nav {
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 50%;
+    bottom: 50%;
+    padding: 20px;
+}
+
+.vert-nav {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+}
+
+.checked a{
+    color: black;
+}
+
