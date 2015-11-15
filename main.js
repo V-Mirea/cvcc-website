@@ -1,33 +1,25 @@
 $(document).ready(function() {
     var lastScrollTop = 0;
-    var animating = false;
      
-    $(window).scroll(function(event) {
+    $(window).bind('mousewheel', function(event) {
         var scrollTop = $(this).scrollTop();
         
         // If user scrolls down
-        if ((scrollTop > lastScrollTop) && $(".current").next("div").length > 0) {
-            if (animating == false) {
-                console.log("down");
-
-                $(".current").next("div").addClass("current");
-                $(".current").first().removeClass("current");
-                
-                animating = true;
-                $("html, body").animate({
-                    scrollTop: $(".current").offset().top    
-                }, 1000, function() {animating = false});   
-            }
+        if ((event.deltaY < 0) && $(".current").next(".full-height").length > 0) {
+            $(".current").next(".full-height").addClass("current");
+            $(".current").first().removeClass("current");
+            
+            $("html, body").animate({
+                scrollTop: $(".current").offset().top - 111   
+            }, 1000);
         // If user scrolls up
-        } else {
-            if ($(".current").prev("div").length > 0) {
-                console.log("up");
-                
-                $(".current").prev("div").addClass("current");
+        } else if ((event.deltaY > 0) && $(".current").prev(".full-height").length > 0) { 
+            if ($(".current").prev(".full-height").length > 0) {        
+                $(".current").prev(".full-height").addClass("current");
                 $(".current").last().removeClass("current");
                 
                 $("html, body").animate({
-                    scrollTop: $(".current").offset().top    
+                    scrollTop: $(".current").offset().top - 111    
                 }, 1000);
             }            
         }
