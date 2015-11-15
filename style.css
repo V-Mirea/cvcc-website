@@ -16,22 +16,12 @@ body {
     height: -moz-calc(100vh - 111px); /* firefox */
 }
 
-#id1 {
-    background-color: red;
-}
-#id2 {
-    background-color: blue;
+h2 {
+    font-size: 7em;
 }
 
-#id3 {
-    background-color: yellow;
-}
-#id4 {
-    background-color: green;
-}
-
-#id5 {
-    background-color: purple;
+p {
+    font-size: 1.5em;
 }
 
 #nav {
